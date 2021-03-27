@@ -23,3 +23,4 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'MyArtifact'
     publishLocation: 'FilePath'
+    TargetPath: '$(Build.ArtifactStagingDirectory)'
