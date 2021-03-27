@@ -19,8 +19,8 @@ steps:
   displayName: 'dotnet build $(buildConfiguration)'
   
 
-- task: DownloadBuildArtifacts@0
+- task: PublishPipelineArtifact@0
   inputs:
-    buildType: 'current'
-    downloadType: 'specific'
-    downloadPath: '$(System.ArtifactsDirectory)'
+    targetPath: $(Build.ArtifactStagingDirectory)
+    artifactName: drop
+
