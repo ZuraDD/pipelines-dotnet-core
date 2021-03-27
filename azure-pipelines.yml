@@ -18,7 +18,9 @@ steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
   
-- task: PublishPipelineArtifact@1
+
+- task: DownloadBuildArtifacts@0
   inputs:
-    ArtifactName: 'MyArtifact'
-    TargetPath: '$(Build.ArtifactStagingDirectory)'
+    buildType: 'current'
+    downloadType: 'specific'
+    downloadPath: '$(System.ArtifactsDirectory)'
